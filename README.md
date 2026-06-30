@@ -1,23 +1,15 @@
 # 📝 Mini Task Manager
 
-A full-stack task management application built as part of the CommuSync technical assessment. The project demonstrates full-stack development fundamentals using Next.js, TypeScript, Express, MongoDB, and Tailwind CSS.
+A full-stack task management application built for the CommuSync technical assessment.
 
----
+## Features
 
-## 🚀 Features
+- Add a task
+- View all tasks
+- Mark a task as completed
+- Delete a task
 
-- ✅ Add a new task
-- ✅ View all tasks
-- ✅ Mark tasks as completed
-- ✅ Delete tasks
-- ✅ Responsive and modern UI
-- ✅ Input validation
-- ✅ Error handling
-- ✅ RESTful API architecture
-
----
-
-## 🛠️ Tech Stack
+## Tech Stack
 
 ### Frontend
 - Next.js (App Router)
@@ -28,52 +20,55 @@ A full-stack task management application built as part of the CommuSync technica
 ### Backend
 - Node.js
 - Express.js
-- TypeScript
 - MongoDB
 - Mongoose
 
 ---
 
-## 📂 Project Structure
+## Folder Structure
 
 ```
-Mini-Task-Manager/
+Mini-Task-Manager
 │
-├── client/      # Next.js frontend
-├── server/      # Express backend
+├── client/
+│   ├── app/
+│   ├── components/
+│   ├── services/
+│   └── types/
+│
+├── server/
+│   ├── controllers/
+│   ├── models/
+│   ├── routes/
+│   ├── config/
+│   └── src/
+│
 └── README.md
 ```
 
 ---
 
-## ⚙️ Installation
+## Setup
 
-### 1. Clone the repository
+### Backend
 
 ```bash
-git clone <your-github-repository-url>
-cd Mini-Task-Manager
+cd server
+npm install
+npm run dev
 ```
 
-### 2. Install dependencies
-
-Frontend
+### Frontend
 
 ```bash
 cd client
 npm install
-```
-
-Backend
-
-```bash
-cd ../server
-npm install
+npm run dev
 ```
 
 ---
 
-## 🔑 Environment Variables
+## Environment Variables
 
 Create a `.env` file inside the `server` folder.
 
@@ -84,65 +79,36 @@ MONGODB_URI=your_mongodb_connection_string
 
 ---
 
-## ▶️ Run the Project
-
-### Start Backend
-
-```bash
-cd server
-npm run dev
-```
-
-### Start Frontend
-
-```bash
-cd client
-npm run dev
-```
-
-Frontend:
-
-```
-http://localhost:3000
-```
-
-Backend:
-
-```
-http://localhost:5000
-```
-
----
-
-## 📡 API Endpoints
+## API Endpoints
 
 | Method | Endpoint | Description |
 |--------|----------|-------------|
-| GET | /api/tasks | Get all tasks |
+| GET | /api/tasks | Fetch all tasks |
 | POST | /api/tasks | Create a task |
 | PATCH | /api/tasks/:id | Toggle task completion |
 | DELETE | /api/tasks/:id | Delete a task |
 
 ---
 
-## 💡 Design Decisions
+# Design Decisions
 
-- Used **Next.js App Router** for a modern React application structure.
-- Used **Express.js** to build a simple RESTful API.
-- Used **MongoDB with Mongoose** for flexible data storage.
-- Kept the project modular by separating controllers, models, routes, and components.
-- Added Tailwind CSS for a clean, responsive, and maintainable UI.
+### Next.js App Router
+Used App Router for a modern project structure and component-based frontend.
 
----
+### TypeScript
+Used TypeScript to improve type safety and reduce runtime errors.
 
-## 📸 Preview
+### Express.js
+Used Express to build a lightweight REST API with clear route separation.
 
-(Add screenshots here if available.)
+### MongoDB
+MongoDB was chosen because its document-based structure fits simple task objects well and integrates easily with Mongoose.
 
----
+### Tailwind CSS
+Tailwind CSS was used for rapid UI development and consistent styling without writing custom CSS for every component.
 
-## 👩‍💻 Author
+### Project Structure
+Frontend and backend are separated into different folders, while backend logic is organized into models, controllers, and routes for better maintainability.
 
-**Taniya Das**
-
-Built for the **CommuSync Full-Stack Developer Technical Assessment**.
+### Validation & Error Handling
+Basic validation prevents empty tasks, and API operations include appropriate error handling to avoid crashes and provide meaningful responses.
